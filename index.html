@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Galaxy Team Collage Maker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <div class="image-container"><img src="LIQUIDGALAXYLOGO.svg" alt="" height="150px" width="auto"></div>
+    <p class="info">Send your images in the format "NAME - INFO". JPG/JPEG/PNG are supported.</p>
+    <div class="row-menu">
+        <input id="image-input" type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg">
+        <label for="number">Columns:</label>
+        <input id="inputNumber" value="8" type="text" name="number" />
+        <a href="javascript:void(0);" onclick="generateScreenshot();">Download Collage</a>
+    </div>
+    <div id="output">
+        <output></output>
+    </div>
+    <script>
+        function generateScreenshot() {
+
+            setTimeout(() => {
+                html2canvas(document.getElementById('output'), {
+                    logging: true,
+                    profile: true,
+                    scale: 2,
+                    useCORS: true,
+                    backgroundColor: null,
+                }).then(function (canvas) {
+                    var data = canvas.toDataURL('image/png', 0.9)
+                    var src = encodeURI(data);
+
+                    // document.getElementById('screenshot').src = src;
+                    const link = document.createElement('a')
+                    link.href = src
+                    link.download = 'team.png'
+                    document.body.appendChild(link)
+                    link.click()
+                    document.body.removeChild(link)
+                });
+            }, 1000);
+        }
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

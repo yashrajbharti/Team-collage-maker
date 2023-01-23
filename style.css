@@ -1,0 +1,112 @@
+@font-face {
+    font-family: "sans-regular";
+    src: url("Fonts/Sans\ Regular.ttf");
+}
+
+@font-face {
+    font-family: "sans-bold";
+    src: url("Fonts/Sans\ Bold.ttf");
+}
+
+* {
+    font-family: "sans-regular";
+}
+
+body {
+    background-color: #0e1012;
+    justify-content: center;
+    color: white;
+}
+
+.image-container {
+    padding: 20px;
+    margin: auto;
+    width: 200px;
+}
+
+output {
+    display: grid;
+    grid-template-columns: repeat(8, 140px);
+    /* justify-content: flex-start;
+    flex-wrap: wrap; */
+    gap: 75px 20px;
+    position: relative;
+    border-radius: 5px;
+    text-align: center;
+}
+
+output .image {
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+output .image .img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+output .image span {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    margin-left: 4px;
+    white-space: nowrap;
+    font-family: "sans-bold";
+}
+
+output .image span:last-child {
+    font-size: 12px !important;
+    font-family: "sans-regular" !important;
+}
+
+output .span--hidden {
+    visibility: hidden;
+}
+
+
+input {
+    margin-top: 1rem;
+    width: 240px;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+input::file-selector-button,
+a {
+    font-weight: bold;
+    color: dodgerblue;
+    padding: 0.7em;
+    margin-bottom: 30px;
+    background-color: white;
+    border: thin solid white;
+    border-radius: 4px;
+}
+
+#inputNumber {
+    width: 20px;
+}
+
+a {
+    text-decoration: none;
+    height: 40px;
+    width: auto;
+    font-size: 14px;
+    margin-left: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.info {
+    text-align: center;
+}
+
+#output {
+    /* border: 1px solid red; */
+    display: inline-block"
+}
