@@ -26,13 +26,13 @@ function displayImages() {
                   <div class="img" id="${index}" style= "background-image:url(${URL.createObjectURL(
       image
     )})"></div>
-                  <span contenteditable="true" class="bold">${namesArray[index]
-                    .split("-")[0]
-                    .trim()}</span>
+                  <span contenteditable="true" class="bold">${
+                    namesArray[index]?.split("-")[0]?.trim() ?? "No Name"
+                  }</span>
                   <br>
-                  <span contenteditable="true">${namesArray[index]
-                    .split("-")[1]
-                    .trim()}</span>
+                  <span contenteditable="true">${
+                    namesArray[index]?.split("-")[1]?.trim() ?? "No Info"
+                  }</span>
                 </div>`;
   });
   output.innerHTML = images;
