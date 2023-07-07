@@ -22,17 +22,17 @@ namesArray.sort((a, b) => imagesArray.indexOf(a) - imagesArray.indexOf(b)); // S
 function displayImages() {
   let images = "";
   imagesArray.forEach((image, index) => {
+    const name = namesArray[index]?.split("-")[0]?.trim() ?? "No Name";
+    const info = namesArray[index]?.split("-")[1]?.trim() ?? "No Info";
+    const fontSize = name.length > 20 ? "12px" : "16px";
+
     images += `<div class="image">
                   <div class="img" id="${index}" style= "background-image:url(${URL.createObjectURL(
       image
     )})"></div>
-                  <span contenteditable="true" class="bold">${
-                    namesArray[index]?.split("-")[0]?.trim() ?? "No Name"
-                  }</span>
+                  <span contenteditable="true" class="bold" style="font-size: ${fontSize}">${name}</span>
                   <br>
-                  <span contenteditable="true">${
-                    namesArray[index]?.split("-")[1]?.trim() ?? "No Info"
-                  }</span>
+                  <span contenteditable="true">${info}</span>
                 </div>`;
   });
   output.innerHTML = images;
